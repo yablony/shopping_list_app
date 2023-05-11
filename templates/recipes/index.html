@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Your Presonal Shopping List</h1>
-<a href="/users/new">Sign Up</a>
-<a href="/sessions/new">Log In</a>
+    <h1>Your Presonal Shopping List</h1>
+    {% if current_user %}
+        <h3>Welcome home, {{ current_user['name'] }}</h3>
+    {% else %}
+        <a href="/users/new">Sign Up</a>
+        <a href="/sessions/new">Log In</a>
+    {% endif %}
 {% endblock %}
