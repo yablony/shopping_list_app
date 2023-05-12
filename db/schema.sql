@@ -34,3 +34,7 @@ CREATE TABLE recipes (
 INSERT INTO recipes(name, cooking_time, image_url, ingredients, cooking_instructions)
 VALUES
   ('Tacos', 90, 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 'taco shells, chicken, spices, salsa', 'Step 1, step 2, step 3');
+
+INSERT INTO shopping_list(user_id, item_name, image_url)
+VALUES
+  (1, 'parsley', 'https://images.unsplash.com/photo-1588879460618-9249e7d947d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');

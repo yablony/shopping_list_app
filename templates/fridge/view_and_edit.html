@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Foods in your fridge:</h1>
+    <form action="fridge/delete">
+        <button>Clear all</button>
+    </form>
+    </section>
+    {% for item in fridge %}
+        <p>{{ item['item_name'] }}<p>
+        <section class="fridge_items_controls/new">
+            <form action="fridge/{{ item['id'] }}">
+                <button>X</button>
+            </form>
+        </section>
+    {% endfor %} 
+{% endblock %}

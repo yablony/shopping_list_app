@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Your Personal Shopping List</h1>
+    {% if current_user %}
+        <h3>Welcome home, {{ current_user['name'] }}</h3>
+        <form action="/sessions/delete" method="POST">
+            <button>Log out</button>
+        </form>
+
+        <section class="shopping_list">
+            <h2>Shopping List</h2>
+            <form action="/shopping_list/new" method="POST">
+                <label for="">Item:</label>
+                <input type="text" name="item_name">
+
+                <label for="">Image link (not required):</label>
+                <input type="text" name="image_url">
+
+                <button>Add item</button>
+            </form>
+            <section class="shopping_list_controls">
+                <a href="shopping_list/update">Edit all</a>
+                <form action="shopping_list/delete">
+                    <button>Clear all</button>
+                </form>
+            </section>
+            {% for item in shopping_list %}
+                <p>{{ item['item_name'] }}</p>
+                {% if item['image_url'] != '' %}
+                    <img src="{{ item['image_url'] }}" alt="image of {{ item['item_name'] }}">
+                {% else %}
+                    <p></p>
+                {% endif %}
+                <section class="shopping_list_items_controls">
+                    <form action="shopping_list/{{ item['id'] }}">
+                        <button>X</button>
+                    </form>
+                </section>
+            {% endfor %}           
+        </section>
+
+        <section class="fridge">
+            <h2>In my Fridge</h2>
+            <form action="/fridge/new" method="POST">
+                <label for="">Item:</label>
+                <input type="text" name="item_name">
+
+                <button>Add item</button>
+            </form>
+            <section class="fridge_controls">
+                <a href="/fridge/update">View and edit all</a>       
+            </section>
+        </section>
+    {% else %}
+        <a href="/users/new">Sign Up</a>
+        <a href="/sessions/new">Log In</a>
+    {% endif %}
+{% endblock %}
