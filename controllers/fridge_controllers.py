@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, session
 from services.session_info import current_user
-from models.fridge import select_all, create
+from models.fridge import select_all, create, update_info
 
 def update():
     fridge = select_all()
@@ -10,3 +10,9 @@ def new():
     item_name = request.form.get('item_name')
     create(session['user_id'], item_name)
     return redirect('/')
+
+def edit(id):
+    print('meow')
+    item_name = request.form.get('item_name')
+    update_info(id, session['user_id'], item_name)
+    return render_template('/')

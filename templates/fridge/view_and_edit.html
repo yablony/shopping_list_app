@@ -2,15 +2,17 @@
 {% block content %}
     <h1>Foods in your fridge:</h1>
     <form action="fridge/delete">
-        <button>Clear all</button>
+        <button>Remove all</button>
     </form>
-    </section>
     {% for item in fridge %}
-        <p>{{ item['item_name'] }}<p>
-        <section class="fridge_items_controls/new">
-            <form action="fridge/{{ item['id'] }}">
-                <button>X</button>
-            </form>
-        </section>
+        <form action="/fridge/{{ item['id'] }}" method="POST">
+            <label for="">Item:</label>
+            <input type="text" name="item_name" value="{{ item['item_name'] }}">
+
+            <button>Update item</button>
+        </form>
+        <form action="fridge/{{ item['id'] }}/delete", method="POST">
+            <button>X</button>
+        </form>
     {% endfor %} 
 {% endblock %}
