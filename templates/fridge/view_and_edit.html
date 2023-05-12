@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Foods in your fridge:</h1>
-    <form action="fridge/delete">
+    <a href="/">Back to main page</a>
+    <form action="/fridge/delete" method="POST">
         <button>Remove all</button>
     </form>
     {% for item in fridge %}
@@ -11,7 +12,7 @@
 
             <button>Update item</button>
         </form>
-        <form action="fridge/{{ item['id'] }}/delete", method="POST">
+        <form action="/fridge/{{ item['id'] }}/delete", method="POST">
             <button>X</button>
         </form>
     {% endfor %} 

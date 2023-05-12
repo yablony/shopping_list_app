@@ -20,8 +20,8 @@
             </form>
             <section class="shopping_list_controls">
                 <a href="/shopping_list/update">Edit all</a>
-                <form action="shopping_list/delete">
-                    <button>Clear all</button>
+                <form action="/shopping_list/delete" method="POST">
+                    <button>Remove all</button>
                 </form>
             </section>
             {% for item in shopping_list %}
@@ -32,7 +32,7 @@
                     <p></p>
                 {% endif %}
                 <section class="shopping_list_items_controls">
-                    <form action="shopping_list/{{ item['id'] }}">
+                    <form action="/shopping_list/{{ item['id'] }}/delete" method="POST">
                         <button>X</button>
                     </form>
                 </section>

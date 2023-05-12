@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, session
 from services.session_info import current_user
-from models.fridge import select_all, create, update_info
+from models.fridge import select_all, create, update_info, delete_fridge_item, delete_fridge
 
 def update():
     fridge = select_all()
@@ -16,3 +16,11 @@ def edit(id):
     item_name = request.form.get('item_name')
     update_info(id, session['user_id'], item_name)
     return render_template('/')
+
+def delete_item(id):
+    delete_fridge_item(id)
+    return redirect('/fridge/update')
+
+def delete_all():
+    delete_fridge(session['user_id'])
+    return redirect('/fridge/update')
