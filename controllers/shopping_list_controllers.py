@@ -3,7 +3,10 @@ from services.session_info import current_user
 from models.shopping_list import select_all, create, update_info, delete_shopping_item, delete_shopping_list
 
 def index():
-    shopping_list = select_all(session['user_id'])
+    if session == {}:
+        shopping_list = select_all(0)
+    else: 
+        shopping_list = select_all(session['user_id'])
     return render_template('/shopping_list/index.html', current_user = current_user(), shopping_list = shopping_list)
 
 def new():
