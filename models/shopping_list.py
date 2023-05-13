@@ -14,3 +14,6 @@ def delete_shopping_item(id):
 
 def delete_shopping_list(user_id):
     sql('DELETE FROM shopping_list WHERE user_id=%s RETURNING *', [user_id])
+
+def delete_shopping_item_by_name(item_name):
+    sql('DELETE FROM shopping_list WHERE item_name=%s RETURNING *', [item_name])
