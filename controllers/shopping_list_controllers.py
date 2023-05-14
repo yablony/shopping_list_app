@@ -48,3 +48,18 @@ def delete_item(id):
 def delete_all():
     delete_shopping_list(session['user_id'])
     return redirect('/')
+
+def add_ingredients():
+    ingredients = request.form.getlist('ingredients_list')
+    fridge = select_all_fridge(session['user_id'])
+    fridge_list = []
+    for fridge_item in fridge:
+            fridge_list.append(fridge_item['item_name'])
+    # ingredients needs to be a list for this to work
+    # for every time a <li> is written I want it to be added to this list that will be sent together with the form
+    for item_name in ingredients:
+        if item_name in fridge_list:
+            pass
+        else:
+            create(session['user_id'], item_name)
+    return redirect('/')

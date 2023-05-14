@@ -3,3 +3,4 @@ psycopg2
 bcrypt
 requests
 gunicorn
+python-dotenv
