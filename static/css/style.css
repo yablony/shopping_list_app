@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccb69b;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: #473144;
+}
+
+h2 {
+    font-family: 'Permanent Marker', cursive;
+    color: #af1b3f;
+}
+
+h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: black;
+}
+
+.shopping_list {
+    background-image: url('https://images.unsplash.com/photo-1603484477859-abe6a73f9366?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80');
+    background-size: cover;
+}
+
+.shopping_heading {
+    color: black;
+}
