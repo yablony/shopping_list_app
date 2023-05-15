@@ -12,6 +12,29 @@ body {
     margin: 1rem;
 }
 
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.welcome_home {
+    font-size: 1.7rem;
+}
+
+.logout {
+    margin: 0;
+}
+
+.search_bar {
+    display: flex;
+}
+
+.search_input {
+    min-width: 300px;
+}
+
 h1 {
     font-family: 'Permanent Marker', cursive;
     color: #473144;
@@ -43,7 +66,7 @@ h3 {
 }
 
 .shopping_heading {
-    color: black;
+    color: rgb(97, 35, 35);
 }
 
 .recipes {
@@ -110,4 +133,14 @@ form {
 
 a {
     color: #AF1B3F;
+}
+
+.sign_up {
+    text-decoration: none;
+    color: inherit;
+}
+
+.log_in {
+    text-decoration: none;
+    color: inherit;
 }

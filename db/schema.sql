@@ -11,7 +11,7 @@ CREATE TABLE users(
 CREATE TABLE shopping_list (
     id SERIAL PRIMARY KEY,
     user_id INTEGER,
-    item_name TEXT,
+    item_name TEXT
 );
 
 CREATE TABLE fridge_items (
