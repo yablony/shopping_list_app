@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Search Results</h1>
+<h1>Looking for yummy recipes</h1>
 <a href="/">Back to the shopping list</a>
+
+<form class="search_bar_or_add_item" action="/recipes/search">
+    <input class="search_input" type="text" name="search_input">
+    <button class="btn btn-light">Search Recipes</button>
+</form>
+
 <section class="recipes">
     {% for recipe in search_results %}
         <a class="recipe_links" href="/recipes/{{ recipe['id'] }}">

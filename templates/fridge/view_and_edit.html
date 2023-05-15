@@ -2,18 +2,28 @@
 {% block content %}
     <h1>Foods in your fridge:</h1>
     <a href="/">Back to the shopping list</a>
-    <form action="/fridge/delete" method="POST">
-        <button>Remove all</button>
-    </form>
-    {% for item in fridge %}
-        <form action="/fridge/{{ item['id'] }}" method="POST">
-            <label for="">Item:</label>
-            <input type="text" name="item_name" value="{{ item['item_name'] }}">
 
-            <button>Update item</button>
-        </form>
-        <form action="/fridge/{{ item['id'] }}/delete", method="POST">
-            <button>Delete item</button>
-        </form>
+    <form class="search_bar_or_add_item" action="/fridge/new" method="POST">
+        <input type="text" name="item_name">
+
+        <button class="btn btn-light">Add item</button>
+    </form>
+
+    <form action="/fridge/delete" method="POST">
+        <button class="btn btn-danger">Remove all</button>
+    </form>
+    
+    {% for item in fridge %}
+        <section class="fridge_controls">
+            <form class="delete_buttons" action="/fridge/{{ item['id'] }}/delete", method="POST">
+                <button class="btn btn-outline-danger">X</button>
+            </form>
+
+            <form class="update_item" action="/fridge/{{ item['id'] }}" method="POST">
+                <input type="text" name="item_name" value="{{ item['item_name'] }}">
+
+                <button class="btn btn-light">Update item</button>
+            </form>
+        </section>
     {% endfor %} 
 {% endblock %}

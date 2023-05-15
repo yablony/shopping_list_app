@@ -10,27 +10,19 @@
         </form>
     </header>
 
-    <form class="search_bar" action="/recipes/search">
+    <form class="search_bar_or_add_item" action="/recipes/search">
         <input class="search_input" type="text" name="search_input">
-        <button>Search Recipes</button>
+        <button class="btn btn-light">Search Recipes</button>
     </form>
 
     <section class="shopping_list">
         <h2 class="shopping_heading">Shopping List</h2>
-        <form action="/shopping_list/new" method="POST">
-            <label for="">Item:</label>
+
+        <form class="search_bar_or_add_item" action="/shopping_list/new" method="POST">
             <input type="text" name="item_name">
 
-            <button>Add item</button>
+            <button class="btn btn-light">Add item</button>
         </form>
-
-        <section class="shopping_list_controls">
-            <a class="edit_link" href="/shopping_list/update">Edit all</a>
-            
-            <form action="/shopping_list/delete" method="POST">
-                <button>Remove all</button>
-            </form>
-        </section>
 
         {% for item in shopping_list %}
         <section class="list_of_shopping_items">
@@ -39,28 +31,35 @@
             </form>
             <p class="shopping_list_item">{{ item['item_name'] }}</p>
         </section>
-        {% endfor %}      
+        {% endfor %}   
+
+        <section class="shopping_list_controls">
+            <a class="edit_link" href="/shopping_list/update">Edit all</a>
+
+            <form action="/shopping_list/delete" method="POST">
+                <button class="btn btn-danger">Remove all</button>
+            </form>   
+        </section>
     </section>
 
     <section class="fridge">
         <h2>In my Fridge</h2>
-        <form action="/fridge/new" method="POST">
-            <label for="">Item:</label>
+        <form class="search_bar_or_add_item" action="/fridge/new" method="POST">
             <input type="text" name="item_name">
 
-            <button>Add item</button>
+            <button class="btn btn-light">Add item</button>
         </form>
 
         <a class="edit_link" href="/fridge/update">View and edit all</a>       
     </section>
 {% else %}
-<section class="login_controls">
-    <button class="btn btn-danger">
-        <a class="sign_up" href="/users/new">Sign Up</a>
-    </button>
-    <button class="btn btn-light">
-        <a class="log_in" href="/sessions/new">Log In</a>
-    </button>
-</section>
+    <section class="login_controls">
+        <button class="btn btn-danger">
+            <a class="sign_up" href="/users/new">Sign Up</a>
+        </button>
+        <button class="btn btn-light">
+            <a class="log_in" href="/sessions/new">Log In</a>
+        </button>
+    </section>
 {% endif %}
 {% endblock %}

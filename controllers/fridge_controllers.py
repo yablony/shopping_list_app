@@ -7,9 +7,14 @@ def update():
     return render_template('/fridge/view_and_edit.html', current_user = current_user(), fridge = fridge)
 
 def new():
+    fridge = select_all_fridge(session['user_id'])
+    fridge_list = []
+    for fridge_item in fridge:
+            fridge_list.append(fridge_item['item_name'])
     item_name = request.form.get('item_name')
-    create(session['user_id'], item_name)
-    return redirect('/')
+    if item_name != '' and item_name not in fridge_list:
+            create(session['user_id'], item_name)
+    return redirect('/fridge/update')
 
 def edit(id):
     item_name = request.form.get('item_name')
