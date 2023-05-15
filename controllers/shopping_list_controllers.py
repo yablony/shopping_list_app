@@ -20,7 +20,6 @@ def index():
 
 def new():
     item_name = request.form.get('item_name')
-    image_url = request.form.get('image_url')
     fridge = select_all_fridge(session['user_id'])
     fridge_list = []
     for fridge_item in fridge:
@@ -28,7 +27,7 @@ def new():
     if item_name in fridge_list:
         pass
     else:
-        create(session['user_id'], item_name, image_url)
+        create(session['user_id'], item_name)
     return redirect('/')
 
 def update():

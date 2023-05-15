@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
+
 {% block content %}
-    <h1>Edit Shopping List:</h1>
-    {% for item in shopping_list %}
-    <form action="/shopping_list/{{ item['id'] }}" method="POST">
-        <label for="">Item:</label>
-        <input type="text" name="item_name" value="{{ item['item_name'] }}">
+<h1>Edit Shopping List:</h1>
+<a href="/">Back to the shopping list</a>
+{% for item in shopping_list %}
+<form action="/shopping_list/{{ item['id'] }}" method="POST">
+    <label for="">Item:</label>
+    <input type="text" name="item_name" value="{{ item['item_name'] }}">
 
-        <label for="">Image link (not required):</label>
-        <input type="text" name="image_url" value="{{ item['image_url'] }}">
+    <button>Update item</button>
+</form>
+{% endfor %} 
 
-        <button>Update item</button>
-    </form>
-    {% endfor %} 
 {% endblock %}

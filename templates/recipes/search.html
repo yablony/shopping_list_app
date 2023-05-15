@@ -2,9 +2,10 @@
 
 {% block content %}
 <h1>Search Results</h1>
+<a href="/">Back to the shopping list</a>
 <section class="recipes">
     {% for recipe in search_results %}
-        <a href="/recipes/{{ recipe['id'] }}">
+        <a class="recipe_links" href="/recipes/{{ recipe['id'] }}">
             <section class="single_recipe">
                 <h3 class="recipe_heading">{{ recipe['title'] }}</h3>
                 <img src="{{ recipe['image'] }}" alt="image of {{ recipe['title'] }}">

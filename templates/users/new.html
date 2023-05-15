@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+
 {% block content %}
 <h1>Sign up</h1>
 <h2>to a hustle-free shopping list</h2>
 
-<form action="/users" method="POST">
+<form class="sign_up" action="/users" method="POST">
     <label for="">Name:</label>
     <input type="text" name="name">
 
@@ -13,6 +14,6 @@
     <label for="">Password:</label>
     <input type="password" name="password">
 
-    <button>Sign up</button>
+    <button class="btn btn-outline-danger">Sign up</button>
 </form>
 {% endblock %}
