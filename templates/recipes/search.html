@@ -4,8 +4,12 @@
 <h1>Search Results</h1>
 <section class="recipes">
     {% for recipe in search_results %}
-        <h3><a href="/recipes/{{ recipe['id'] }}">{{ recipe['title'] }}</a></h3>
-        <img src="{{ recipe['image'] }}" alt="image of {{ recipe['title'] }}">
+        <a href="/recipes/{{ recipe['id'] }}">
+            <section class="single_recipe">
+                <h3 class="recipe_heading">{{ recipe['title'] }}</h3>
+                <img src="{{ recipe['image'] }}" alt="image of {{ recipe['title'] }}">
+            </section>
+        </a>
     {% endfor %}
 </section>
 {% endblock %}
