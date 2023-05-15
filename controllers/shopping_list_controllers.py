@@ -15,7 +15,6 @@ def index():
         for item in shopping_list:
             if item['item_name'] in fridge_list:
                 delete_shopping_item_by_name(item['item_name'])
-
     return render_template('/shopping_list/index.html', current_user = current_user(), shopping_list = shopping_list)
 
 def new():
