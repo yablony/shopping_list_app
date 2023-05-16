@@ -149,8 +149,10 @@ header {
     gap: 1.25rem;
 }
 
-.recipes {
-    
+.recipes img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
 .recipe_links {
