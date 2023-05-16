@@ -5,13 +5,54 @@
 body {
     background-color: #efc69b;
     font-family: 'Kanit', sans-serif;
-
-
     animation: fadeIn;
     animation-duration: 1.5s;
     margin: 1rem;
 }
 
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: #473144;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-family: 'Permanent Marker', cursive;
+    color: black;
+}
+
+h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: #af1b3f;
+}
+
+a {
+    color: #AF1B3F;
+    display: block;
+}
+
+form {
+    margin: 1rem auto;
+    display: grid;
+    justify-content: start;
+    gap: 0.5rem;
+}
+
+input {
+    border-radius: 20% 20%;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+button {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    display: grid;
+}
+
+
+/* shopping_list/index.html */
 header {
     display: flex;
     justify-content: flex-start;
@@ -35,28 +76,6 @@ header {
     min-width: 400px;
 }
 
-h1 {
-    font-family: 'Permanent Marker', cursive;
-    color: #473144;
-    margin-bottom: 1rem;
-}
-
-h2 {
-    font-family: 'Permanent Marker', cursive;
-    color: black;
-}
-
-h3 {
-    font-family: 'Permanent Marker', cursive;
-    color: #af1b3f;
-}
-
-.login_controls {
-    display: grid;
-    justify-content: start;
-    gap: 1rem;
-}
-
 .shopping_list {
     background-image: url('https://images.unsplash.com/photo-1519972064555-542444e71b54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
     background-size: cover;
@@ -68,50 +87,6 @@ h3 {
 
 .shopping_heading {
     color: rgb(97, 35, 35);
-}
-
-.recipes {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.25rem;
-}
-
-.single_recipe {
-    display: grid;
-    background-color:  #df9b6d;
-    justify-content: space-between;
-}
-
-.recipe_links {
-    text-decoration: none;
-}
-
-.recipe_heading {
-    color: #473144;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 1rem;
-}
-
-.recipes img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-button {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-    display: grid;
-}
-
-form {
-    margin: 1rem auto;
-    display: grid;
-    justify-content: start;
-    gap: 0.5rem;
 }
 
 .list_of_shopping_items {
@@ -132,9 +107,10 @@ form {
     padding-left: 1rem;
 }
 
-a {
-    color: #AF1B3F;
-    display: block;
+.login_controls {
+    display: grid;
+    justify-content: start;
+    gap: 1rem;
 }
 
 .sign_up {
@@ -147,6 +123,8 @@ a {
     color: inherit;
 }
 
+
+/* shopping_list/edit.html */
 .update_item {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -154,12 +132,8 @@ a {
     margin: 1rem 0;
 }
 
-input {
-    border-radius: 20% 20%;
-    border: none;
-    padding: 0.5rem 1rem;
-}
 
+/* fridge/view_and_edit.html */
 .fridge_controls {
     display: flex;
     justify-content: flex-start;
@@ -167,18 +141,45 @@ input {
     gap: 1rem;
 }
 
-.recipe_img {
-    display: block;
-    margin: 1.5rem 0;
-    border:solid 5px rgb(97, 35, 35);
-    border-radius: 20%;
+
+/* recipes/search.html */
+.recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
 }
 
+.recipe_links {
+    text-decoration: none;
+}
+
+.single_recipe {
+    display: grid;
+    background-color:  #df9b6d;
+    justify-content: space-between;
+}
+
+.recipe_heading {
+    color: #473144;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 1rem;
+}
+
+/* recipes/recipe_description.html */
 .recipe_description {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 3rem;
+}
+
+.recipe_img {
+    display: block;
+    margin: 1.5rem 0;
+    border: solid 5px rgb(97, 35, 35);
+    border-radius: 20%;
 }
 
 .ingredients_list {

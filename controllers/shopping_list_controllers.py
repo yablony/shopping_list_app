@@ -55,7 +55,7 @@ def add_ingredients():
     list_of_all_shopping_items = []
     fridge_list = []
     for fridge_item in fridge:
-            fridge_list.append(fridge_item['item_name'])
+        fridge_list.append(fridge_item['item_name'])
     for shopping_item in shopping_list:
         list_of_all_shopping_items.append(shopping_item['item_name'])
     # ingredients needs to be a list for this to work

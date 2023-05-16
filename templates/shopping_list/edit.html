@@ -3,12 +3,13 @@
 {% block content %}
 <h1>Edit Shopping List:</h1>
 <a href="/">Back to the shopping list</a>
-{% for item in shopping_list %}
-<form class="update_item" action="/shopping_list/{{ item['id'] }}" method="POST">
-    <input type="text" name="item_name" value="{{ item['item_name'] }}">
 
-    <button class="btn btn-light">Update item</button>
-</form>
+{% for item in shopping_list %}
+    <form class="update_item" action="/shopping_list/{{ item['id'] }}" method="POST">
+        <input type="text" name="item_name" value="{{ item['item_name'] }}">
+
+        <button class="btn btn-light">Update item</button>
+    </form>
 {% endfor %} 
 
 {% endblock %}

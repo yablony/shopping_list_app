@@ -1,15 +1,17 @@
 import os
 
-from flask import render_template, request, redirect, Flask
+from flask import render_template, request
 import requests
-from services.session_info import current_user
 
 SPOONACULAR_API_KEY = os.environ.get('SPOONACULAR_API_KEY')
 
 def search_recipes_in_api():
     search_input = request.args.get('search_input')
+    print(f"Search imput is {search_input}")
     api_url = f'https://api.spoonacular.com/recipes/complexSearch?query={search_input}&apiKey={SPOONACULAR_API_KEY}'
+    print(f"API url is {api_url}")
     response = requests.get(api_url).json()
+    print(response)
     search_results = response['results']
     return render_template('/recipes/search.html', search_results = search_results)
 

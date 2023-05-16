@@ -4,16 +4,17 @@
 <h1>{{ recipe_info['title'] }}</h1>
 <a href="/recipes/search">Back to search</a>
 <a href="/">Back to the shopping list</a>
+
 <section class="recipe_description">
     <img class="recipe_img" src="{{ recipe_info['image'] }}" alt="image of the {{ recipe_info['title'] }}">
-    <section>
+    <section class="ingedients">
         <h3>Ingredients:</h3>
 
         <form action="/shopping_list/add_ingredients" method="POST">
             <ul class="ingredients_list">
                 {% for ingredient in recipe_info['extendedIngredients'] %}
-                <li><input class="checkboxes" type="checkbox" name="ingredients_list" value="{{ ingredient['name'] }}">{{ ingredient['name'] }}
-                </li>
+                    <li><input class="checkboxes" type="checkbox" name="ingredients_list" value="{{ ingredient['name'] }}">{{ ingredient['name'] }}
+                    </li>
                 {% endfor %}
             </ul>
 
@@ -24,8 +25,8 @@
 
 <h3>Instructions: </h3>
 <ul>
-{% for step in recipe_info['analyzedInstructions'][0]['steps'] %}
-    <li>{{ step['step'] }}</li>
-{% endfor %}
+    {% for step in recipe_info['analyzedInstructions'][0]['steps'] %}
+        <li>{{ step['step'] }}</li>
+    {% endfor %}
 </ul>
 {% endblock %}
