@@ -16,13 +16,47 @@ A shopping list app that allows you to organise your grocery list easier. You ca
 <img src="./readme_img_resources/app_preview.png" alt="image of the app preview" width="auto" height="800px">
 
 ## :pencil2: Planning & Problem Solving
+As this project had to have more than one page I started my plannig process by drawing up the [wireframes for my app](https://excalidraw.com/#json=HdP2lA1oRzB4YOIHlC9wS,IGXd_V-V7s1t8jYryxiEbA). This then helped me to structure the directories and files inside them in a more organised manner as I knew exactly what the app was goin to require.
+![image of the wireframes for the app](./readme_img_resources/wireframes.png)
 
+I also needed to use at least 3 tables so I had to make the app includes them. I wrote them down, made some notes on the columns they will need to have and established types of relationships they will have between each other:
+![image of the table relationships](./readme_img_resources/db_relationships.png)
+
+Then I dotted down my to-do list for the app making sure I am clear on my priroties.
+
+**Tables and CRUD:**
+- Focus first on creating the shopping and fridge lists
+- Make the lists interact with each other
+- Add CRUD to both lists
+
+**Add the API (as na extra feature):**
+- Add search results
+- Individual recipe pages
+- Ability to add the ingredients from a recipe to the shopping list
+- Lastly add the save button (didn't get to this one)
+
+**Add CSS:**
+- Pick a color scheme
+- Pick fonts
+- Set up search results for recipes with grid
+- Style the buttons (took longer than I thought - too many buttons :sos:)
+- Rearrange buttons and forms
+
+**Deploy Project:**
+- Deploy app on Render
+- Fix any errors that arise
+
+Seperating my work into sections like above allowed me to focus on one part of the project each day. This startegy helped me to stay focused and prevented me from jumping betweeen the different tasks.
 
 ## :rocket: Cool tech
-- HTML, CSS, Python, Psycopg2, Flask, requests, CRUD, gunicorn, Render, Postgresql;
-- External API: [Sponacular](https://spoonacular.com/food-api);
-- Libraries: Animate.css, Bootstrap;
-- Animation: when a page loads the content fades in for a more pleasant user experience (Animate.css);
+- Coding languages: HTML, CSS, Python.
+- Web framework: Flask.
+- Database related tech: Postgresql, Psycopg2, CRUD, RESTful routes.
+- Code editor: Visual Studio Code.
+- Deployment: gunicorn, Render.
+- Libraries: requests, Animate.css, Bootstrap(to style the buttons).
+- External API: [Sponacular](https://spoonacular.com/food-api).
+- Animation: when a page loads the content fades in for a more pleasant user experience (Animate.css).
 - All the passwords are securely stored through bcrypt hashing and salthing.
 
 ## :scream: Bugs to fix :poop:
@@ -31,13 +65,13 @@ A shopping list app that allows you to organise your grocery list easier. You ca
 - Website is not adjusted for screens of different sizes, e.g. the mobile interface.
 
 ## :sob: Lessons learnt
-- Planning is important for the wellbeing of the code, as well as my mental wellbeing.
-- Get different people to test the game ahead of the deadline to find unnoticed bugs.
+- Do not permanently remove parts of the code before testing the new code, it's better to comment them out where possible or save them in a seperate file.
+- Have the confidence that tomorrow I will be able to solve the problems that I had today and let myself rest.
 
 ## :white_check_mark: Future features
 - Save button for recipes.
 - A page with saved recipes.
 - Displaying the fridge items on the main screen as a list, so that the user can view them without needing to click on the 'View and edit all' link.
-- Add a 'Check all' button on the individual recipe pages to save the user time checking all the items.
-- When an item already exists in the fridge and a user tries to add it to their shopping list: display a message ‘Item already exists, are you sure you want to add it?’. This will give the user an option to add an exisiting item to the shopping list.
+- Add a 'Check all' button on the individual recipe pages to save the user time checking all the items before adding them to the shopping list.
+- If an item already exists in the fridge and a user tries to add it to their shopping list display a message ‘Item already exists, are you sure you want to add it?’. This will give the user an option to add an exisiting item to the shopping list.
 - Add update all button instead of individual updates for the shopping list and fridge in case a user wants to bulk-update their items.
