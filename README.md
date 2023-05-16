@@ -13,7 +13,7 @@ A shopping list app that allows you to organise your grocery list easier. You ca
 8. Then take the list to a grocery shop with you! 
 9. As you pick up the items from the store you can delete them from your shopping list.
  
-<img src="./resources/screenshot3.png" alt="picture of the game interface" width="auto" height="800px">
+<img src="./readme_img_resources/app_preview.png" alt="image of the app preview" width="auto" height="800px">
 
 ## :pencil2: Planning & Problem Solving
 I started off by dotting down the key requirements of the MVP that I'll have to meet, which were then integrated into a plan:
