@@ -17,9 +17,11 @@ A shopping list app that allows you to organise your grocery list easier. You ca
 
 ## :pencil2: Planning & Problem Solving
 As this project had to have more than one page I started my plannig process by drawing up the [wireframes for my app](https://excalidraw.com/#json=HdP2lA1oRzB4YOIHlC9wS,IGXd_V-V7s1t8jYryxiEbA). This then helped me to structure the directories and files inside them in a more organised manner as I knew exactly what the app was goin to require.
+</br>
 ![image of the wireframes for the app](./readme_img_resources/wireframes.png)
 
 I also needed to use at least 3 tables so I had to make the app includes them. I wrote them down, made some notes on the columns they will need to have and established types of relationships they will have between each other:
+</br>
 ![image of the table relationships](./readme_img_resources/db_relationships.png)
 
 Then I dotted down my to-do list for the app making sure I am clear on my priroties.
