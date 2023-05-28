@@ -1,6 +1,8 @@
 import os
 
 from flask import Flask, redirect
+from dotenv import load_dotenv
+load_dotenv()
 from routes.users_routes import users_routes
 from routes.recipes_routes import recipes_routes
 from routes.sessions_routes import sessions_routes

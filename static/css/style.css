@@ -123,6 +123,11 @@ header {
     color: inherit;
 }
 
+.guest_log_in {
+    text-decoration: none;
+    color: inherit;
+}
+
 
 /* shopping_list/edit.html */
 .update_item {

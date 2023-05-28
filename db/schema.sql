@@ -8,6 +8,9 @@ CREATE TABLE users(
     password_digest TEXT
 );
 
+INSERT INTO users(name, email, password_digest)
+VALUES('guest', 'guest', 'guest');
+
 CREATE TABLE shopping_list (
     id SERIAL PRIMARY KEY,
     user_id INTEGER,

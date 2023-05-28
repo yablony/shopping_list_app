@@ -1,5 +1,7 @@
 from flask import render_template, redirect, request, session
 from models.users_models import find_user_by_email
+from models.fridge import delete_fridge
+from models.shopping_list import delete_shopping_list
 import bcrypt
 
 def new_session():
@@ -20,5 +22,14 @@ def check_user():
         return redirect('/sessions/new')
     
 def delete():
+    user = find_user_by_email('guest')
+    if (session['user_id'] == user['id']):
+        delete_fridge(user['id'])
+        delete_shopping_list(user['id'])
     session.clear()
+    return redirect('/')
+
+def guest_login():
+    user = find_user_by_email('guest')
+    session['user_id'] = user['id']
     return redirect('/')
