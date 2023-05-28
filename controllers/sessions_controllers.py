@@ -30,6 +30,9 @@ def delete():
     return redirect('/')
 
 def guest_login():
-    user = find_user_by_email('guest')
-    session['user_id'] = user['id']
+    email = "guest"
+    user = find_user_by_email(email)
+
+    if (user['password_digest'] == 'guest'):
+        session['user_id'] = user['id']
     return redirect('/')
