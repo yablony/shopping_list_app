@@ -55,7 +55,7 @@ Seperating my work into sections like above allowed me to focus on one part of t
 - Code editor: Visual Studio Code.
 - Deployment: gunicorn, Render.
 - Libraries: requests, Animate.css, Bootstrap(to style the buttons).
-- External API: [Sponacular](https://spoonacular.com/food-api).
+- External API: [Spoonacular](https://spoonacular.com/food-api).
 - Animation: when a page loads the content fades in for a more pleasant user experience (Animate.css).
 - All the passwords are securely stored through bcrypt hashing and salthing.
 
